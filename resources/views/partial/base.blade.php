@@ -35,6 +35,7 @@
   <link href="{{asset('assets/assets/vendor/quill/quill.snow.css')}}" rel="stylesheet">
   <link href="{{asset('assets/assets/vendor/quill/quill.bubble.css')}}" rel="stylesheet">
   <link id="pagestyle" href="{{asset('assets/css/argon-dashboard.css?v=2.0.4')}}" rel="stylesheet" />
+  
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -309,7 +310,8 @@
             align: []
           }],
           ["link", "image", "video"],
-          ["clean"]
+          ["clean"],
+          [{ 'code-block': 'code-block' }]
         ]
       },
       theme: "snow"

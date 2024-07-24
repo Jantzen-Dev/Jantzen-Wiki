@@ -13,4 +13,5 @@ Route::get('/add-wiki/{id}', [WikiController::class, 'addWiki']);
 Route::post('/wiki/store', [WikiController::class, 'storeWiki'])->name('wiki.store');
 Route::get('/wiki-page/{id}', [WikiController::class, 'wikiPage']);
 
-Route::get('/credentials', [CredentialController::class, 'index']);
+Route::get('/credentials', [CredentialController::class, 'index'])->name('cred');
+Route::post('/credential/store', [CredentialController::class, 'storeCredential'])->name('credential.store');

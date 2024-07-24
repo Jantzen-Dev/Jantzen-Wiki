@@ -8,16 +8,17 @@ use Illuminate\Http\Request;
 class CredentialController extends Controller
 {
     public function index() {
-        return view('pages.credentials');
+        $credentials = Credentials::orderBy('created_at', 'desc')->get();
+        return view('pages.credentials', ['credentials' => $credentials]);
     }
 
-    public function addCredentials(Request $request) {
-        
-        $credentials = new Credentials;
+    public function storeCredential(Request $request) {
+
+        $credentials = new Credentials();
         $credentials->title = $request->title;
-        $credentials->content = $request->content;
+        $credentials->content = $request->contents;
         $credentials->save();
-        return redirect("/");
-        
+
+        return response()->json(['success' => true, 'redirect_url' => route('cred')]);
     }
 }
